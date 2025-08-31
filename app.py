@@ -4,6 +4,8 @@ import customtkinter as ctk
 ctk.set_appearance_mode("dark")
 
 # cricao das funcoes de funcionalidade
+
+#funcao validar login
 def validar_login():
     usuario = campo_usuario.get()
     senha = campo_senha.get()
@@ -13,20 +15,27 @@ def validar_login():
         resultado_login.configure(text="Login bem sucedido!", text_color="green")
     else:
         resultado_login.configure(text="Login Invalido!", text_color="red")  
+
+#funcao cadastrar usuario
+
     
 
 #criacao da janela principal
 app = ctk.CTk()
 
-app.title("Sistema de Login")
-app.geometry("400x300")
+#configuracao da janela
+app.title("Eduardoxis - Sistema de Login") #titulo da janela
+app.geometry("400x300") #tamanho da janela
+app.resizable(width=False, height=False)# desabilitar redimensionamento
+app.attributes("-alpha", 0.9) #transparencia da janela
+app.iconbitmap(default="icons/LogoIcon.ico") #icone da janela
 
 # criacao dos campos 
 
 #label usuario
 label_usuario = ctk.CTkLabel(app, text="Usuario:")
 label_usuario.pack(pady=10)
-    
+
 #entrada usuario
 campo_usuario =ctk.CTkEntry(app, placeholder_text="Digite seu usuario")
 campo_usuario.pack(pady=10)
@@ -42,6 +51,10 @@ campo_senha.pack(pady=10)
 #botao login
 botao_login = ctk.CTkButton(app, text="Login",command=validar_login)
 botao_login.pack(pady=10)
+
+#botao cadastrar
+botao_cadastrar = ctk.CTkButton(app, text="Cadastrar")
+botao_cadastrar.pack(pady=7)
 
 #campo feedback de login
 resultado_login = ctk.CTkLabel(app, text="")
