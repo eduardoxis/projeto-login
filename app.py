@@ -30,7 +30,7 @@ app.resizable(width=False, height=False)# desabilitar redimensionamento
 app.attributes("-alpha", 0.9) #transparencia da janela
 app.iconbitmap(default="icons/LogoIcon.ico") #icone da janela
 
-# criacao dos campos 
+# criacao dos campos
 
 #label usuario
 label_usuario = ctk.CTkLabel(app, text="Usuario:")
